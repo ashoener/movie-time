@@ -17,12 +17,19 @@ User.init(
     password: {
       type: DataTypes.STRING,
       validate: {
+        len: [8],
         notNull: "Password is required",
       },
       allowNull: false,
     },
   },
   {
+    hooks: {
+      async beforeCreate(newUserData) {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+    },
     timestamps: false,
     sequelize: db,
     tableName: "users",
