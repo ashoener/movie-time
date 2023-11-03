@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { User } from "../../../models/index.js";
 
-import { BaseError } from "sequelize";
+import { handleError } from "../../../lib/utils.js";
 
 const router = Router();
 
@@ -12,10 +12,7 @@ router.post("/", async (req, res) => {
     await newUser.save({ validate: false });
     res.json({ success: true });
   } catch (err) {
-    if (err instanceof BaseError) {
-      err.errors = err.errors.map((e) => e.message);
-    }
-    res.status(500).json({ success: false, errors: err.errors });
+    handleError(err, res);
   }
 });
 
