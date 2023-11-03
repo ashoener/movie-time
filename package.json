@@ -17,6 +17,10 @@
   "name": "movie-time",
   "module": "index.js",
   "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "parse": "node parse.js"
+  },
   "peerDependencies": {
     "typescript": "^5.0.0"
   }
