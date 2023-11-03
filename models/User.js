@@ -10,15 +10,18 @@ User.init(
       unique: true,
       validate: {
         len: [4, 16],
-        notNull: "Username is required",
+        notNull: { msg: "Username is required" },
       },
       allowNull: false,
     },
     password: {
       type: DataTypes.STRING,
       validate: {
-        len: [8],
-        notNull: "Password is required",
+        len: {
+          msg: "Password must be at least 8 characters long",
+          args: [8],
+        },
+        notNull: { msg: "Password is required" },
       },
       allowNull: false,
     },
