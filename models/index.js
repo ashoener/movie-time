@@ -1,6 +1,7 @@
 import Movie from "./Movie.js";
 import Genre from "./Genre.js";
 import Language from "./Language.js";
+import User from "./User.js";
 
 import MovieGenre from "./MovieGenre.js";
 import MovieLanguage from "./MovieLanguage.js";
@@ -27,4 +28,4 @@ Language.belongsToMany(Movie, {
   foreignKey: "language_id",
 });
 
-export { Movie, Genre, Language };
+export { Movie, Genre, Language, User };
