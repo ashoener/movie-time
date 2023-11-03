@@ -19,19 +19,17 @@
                 <a href="/">Movie Time</a>
             </h1>
             <nav>
-                {{!-- Render login or logout routes --}}
+                {{!-- Render login/sign-up or logout routes --}}
                 {{#if loggedIn}}
                 <a href="/logout">Logout</a>
-                <button class="'no-button" id="'logout">Logout</button>
+                <button class="no-button" id="'logout">Logout</button>
                 {{else}}
                 <a href="/login">Login</a> |
                 <a href="/signUp">Sign up</a>
                 {{/if}}
             </nav>
         </header>
-        <main class="container container-fluid mt-5">
-            {{{ body }}}
-        </main>
+
     </div>
 
 {{!-- Render for logged in users only --}}
