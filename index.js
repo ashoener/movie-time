@@ -26,9 +26,9 @@ app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const hbs = exphbs.create({ extname: ".hbs" });
-app.engine("hbs", hbs.engine);
-app.set("view engine", "hbs");
+const hbs = exphbs.create({ extname: ".handlebars" });
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
 app.use(express.static("public"));
 
