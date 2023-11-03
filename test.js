@@ -1,6 +1,7 @@
 import { Op } from "sequelize";
 import db from "./config/connection.js";
 import { Movie, Genre, Language } from "./models/index.js";
+import util from "util";
 
 await db.sync({ force: false });
 
@@ -39,7 +40,7 @@ const movies = (
   })
 ).map((m) => m.get({ raw: true }));
 console.log(
-  Bun.inspect(
+  util.inspect(
     movies.map((m) => ({
       ...m,
       Genres: m.Genres ? m.Genres.map((g) => ({ id: g.id, name: g.name })) : [],
