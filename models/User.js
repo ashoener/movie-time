@@ -10,10 +10,16 @@ User.init(
       unique: true,
       validate: {
         len: [4, 16],
+        notNull: "Username is required",
       },
+      allowNull: false,
     },
     password: {
       type: DataTypes.STRING,
+      validate: {
+        notNull: "Password is required",
+      },
+      allowNull: false,
     },
   },
   {
