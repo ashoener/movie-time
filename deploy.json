@@ -1,5 +1,5 @@
 {
   "subdomain": "movie-time",
   "install": "npm install",
-  "start": "npm run start"
+  "start": "node index.js"
 }
