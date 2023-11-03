@@ -76,6 +76,8 @@ const parser = parse({ delimiter: "," }, async (err, data) => {
   );
   const spokenLanguages = parsed.flatMap((r) => r.spoken_languages);
   const genresToInsert = parsed.flatMap((r) => r.genres);
+  console.log("Inserting movies. %d columns..", parsed.length);
+  await insertByChunk(Movie, parsed);
   console.log("Inserting languages. %d columns..", spokenLanguages.length);
   await insertByChunk(MovieLanguage, spokenLanguages);
   console.log("Inserting genres. %d columns..", genresToInsert.length);
