@@ -11,6 +11,7 @@
     <script src="https://kit.fontawesome.com/4e5ba74b3a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/jass.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Diplomata+SC&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="flex-column justify-space-around">
@@ -29,8 +30,12 @@
                 {{/if}}
             </nav>
         </header>
-
+        <main class="container">
+            {{!-- render the sub layout --}}
+            {{{body}}}
+        </main>
     </div>
+    
 
 {{!-- Render for logged in users only --}}
     {{#if loggedIn}}
