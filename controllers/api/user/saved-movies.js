@@ -54,4 +54,24 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.delete("/:id", async (req, res) => {
+  try {
+    const rowsAffected = await SavedMovie.destroy({
+      where: {
+        user_id: req.session.user.id,
+        movie_id: req.params.id,
+      },
+    });
+    if (!rowsAffected) {
+      return res.status(400).json({
+        success: false,
+        errors: ["That movie was not saved to your list"],
+      });
+    }
+    res.json({ success: true });
+  } catch (err) {
+    handleError(err, res);
+  }
+});
+
 export default router;
