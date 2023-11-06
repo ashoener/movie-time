@@ -67,6 +67,13 @@ router.post("/", async (req, res) => {
         success: false,
         errors: ["Movie not found"],
       });
+    const exists = await SavedMovie.count({
+      where: {
+        user_id: req.session.user.id,
+        movie_id: movie.id,
+      },
+    });
+    if (exists) return res.json({ success: true });
     await SavedMovie.create({
       user_id: req.session.user.id,
       movie_id: movie.id,
