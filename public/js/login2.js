@@ -12,7 +12,7 @@ const loginForm = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/timeline');
         } else {
             alert('Login failed.');
         }
