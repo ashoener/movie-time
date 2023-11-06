@@ -1,0 +1,14 @@
+#title {
+    font-family: diplomata, Bungee Spice, serif;
+    font-size: 56px;
+}
+
+.bgimg {
+    background-image: url("public/css/images/pexels-tima-miroshnichenko-7991579.jpg");
+    height: 100%;
+    position: relative;
+    opacity: 0.65;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
