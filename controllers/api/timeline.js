@@ -4,12 +4,13 @@ import { Op } from "sequelize";
 import { Genre, Movie } from "../../models/index.js";
 
 import { handleError } from "../../lib/utils.js";
+import requireLoggedInApi from "../../lib/middleware/requireLoggedInApi.js";
 
 const router = Router();
 
 const yearRegex = /^(\d{4})$/;
 
-router.get("/:year", async (req, res) => {
+router.get("/:year", requireLoggedInApi, async (req, res) => {
   let genres = [];
   let include = [];
   if (!req.params.year.match(yearRegex))
