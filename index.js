@@ -34,5 +34,9 @@ app.use(express.static("public"));
 
 await routeLoader("controllers", app);
 
+app.use((req, res) => {
+  res.status(404).render("404");
+});
+
 await db.sync({ force: false });
 app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
