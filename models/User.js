@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 
 class User extends Model {
   async validatePassword(password) {
-    if (Bun) {
+    if (typeof Bun == "object") {
       return Bun.password.verify(password, this.password);
     }
     return bcrypt.compare(password, this.password);
