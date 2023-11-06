@@ -1,10 +1,9 @@
 import { Router } from "express";
 
 import { Op } from "sequelize";
-import { Genre, Movie } from "../../models";
+import { Genre, Movie } from "../../models/index.js";
 
-import { handleError } from "../../lib/utils";
-import sequelize from "../../config/connection";
+import { handleError } from "../../lib/utils.js";
 
 const router = Router();
 

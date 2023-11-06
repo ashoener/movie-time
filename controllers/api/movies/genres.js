@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { handleError } from "../../../lib/utils";
-import { Genre } from "../../../models";
+import { handleError } from "../../../lib/utils.js";
+import { Genre } from "../../../models/index.js";
 
 const router = Router();
 
