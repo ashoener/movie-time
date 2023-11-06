@@ -4,6 +4,7 @@ import { Op } from "sequelize";
 import { Genre, Movie } from "../../models/index.js";
 
 import { getTMDBImageUrl, handleError } from "../../lib/utils.js";
+
 import requireLoggedInApi from "../../lib/middleware/requireLoggedInApi.js";
 
 const router = Router();

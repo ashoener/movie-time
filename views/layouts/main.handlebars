@@ -1,46 +1,52 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Time</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
-    rel="stylesheet" 
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
-    crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/4e5ba74b3a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/jass.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Diplomata+SC&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/4e5ba74b3a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/jass.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Diplomata+SC&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="flex-column justify-space-around">
-        <header class="display-flex justify-space-between align-center p-2">
-            <h1>
-                <a href="/">Movie Time</a>
-            </h1>
-            <nav>
-                {{!-- Render login/sign-up or logout routes --}}
-                {{#if loggedIn}}
-                <a href="/logout">Logout</a>
-                <button class="no-button" id="'logout">Logout</button>
-                {{else}}
-                <a href="/login">Login</a> |
-                <a href="/signUp">Sign up</a>
-                {{/if}}
-            </nav>
-        </header>
-        <main class="container">
-            {{!-- render the sub layout --}}
-            {{{body}}}
-        </main>
+      <header class="display-flex justify-space-between align-center p-2">
+        <h1>
+          <a href="/">Movie Time</a>
+        </h1>
+        <nav>
+          {{! Render login/sign-up or logout routes }}
+          {{#if loggedIn}}
+            <a href="/logout">Logout</a>
+          {{else}}
+            <a href="/login">Login</a>
+            |
+            <a href="/signUp">Sign up</a>
+          {{/if}}
+        </nav>
+      </header>
+      <main class="container">
+        {{! render the sub layout }}
+        {{{body}}}
+      </main>
     </div>
-    
 
-{{!-- Render for logged in users only --}}
+    {{! Render for logged in users only }}
     {{#if loggedIn}}
-    <script src="/js/logout.js"></script>
+      <script src="/js/logout.js"></script>
     {{/if}}
-  
-</body>
+
+  </body>
 </html>
