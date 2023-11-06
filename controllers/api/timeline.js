@@ -49,6 +49,7 @@ router.get("/:year", requireLoggedInApi, async (req, res) => {
         original_language: "en",
       },
       include,
+      limit: 100,
       attributes: [
         "id",
         "title",
@@ -57,6 +58,7 @@ router.get("/:year", requireLoggedInApi, async (req, res) => {
         "release_date",
         "genres",
       ],
+      order: [["popularity", "desc"]],
     });
     res.json({
       success: true,
