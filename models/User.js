@@ -37,7 +37,7 @@ User.init(
   {
     hooks: {
       async beforeCreate(newUserData) {
-        if (Bun) {
+        if (typeof Bun == "object") {
           newUserData.password = await Bun.password.hash(newUserData.password, {
             algorithm: "bcrypt",
             cost: 10,
@@ -48,7 +48,7 @@ User.init(
         return newUserData;
       },
       async beforeUpdate(newUserData) {
-        if (Bun) {
+        if (typeof Bun == "object") {
           newUserData.password = await Bun.password.hash(newUserData.password, {
             algorithm: "bcrypt",
             cost: 10,
