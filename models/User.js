@@ -4,6 +4,9 @@ import bcrypt from "bcrypt";
 
 class User extends Model {
   async validatePassword(password) {
+    if (Bun) {
+      return Bun.password.verify(password, this.password);
+    }
     return bcrypt.compare(password, this.password);
   }
 }
@@ -34,11 +37,25 @@ User.init(
   {
     hooks: {
       async beforeCreate(newUserData) {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        if (Bun) {
+          newUserData.password = await Bun.password.hash(newUserData.password, {
+            algorithm: "bcrypt",
+            cost: 10,
+          });
+        } else {
+          newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        }
         return newUserData;
       },
       async beforeUpdate(newUserData) {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        if (Bun) {
+          newUserData.password = await Bun.password.hash(newUserData.password, {
+            algorithm: "bcrypt",
+            cost: 10,
+          });
+        } else {
+          newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        }
         return newUserData;
       },
     },
