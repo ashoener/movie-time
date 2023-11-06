@@ -59,7 +59,10 @@ router.get("/:year", async (req, res) => {
           month: m.release_date.getMonth(),
           day: m.release_date.getDate(),
         },
-        text: m.title,
+        text: {
+          headline: m.title,
+          text: "This will be the tagline",
+        },
         unique_id: m.id,
       })),
     });
