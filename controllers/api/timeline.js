@@ -8,9 +8,18 @@ import sequelize from "../../config/connection";
 
 const router = Router();
 
+const yearRegex = /^(\d{4})$/;
+
 router.get("/:year", async (req, res) => {
   let genres = [];
   let include = [];
+  if (!req.params.year.match(yearRegex))
+    return res.status(400).json({ success: false, errors: ["Invalid year"] });
+  const year = parseInt(req.params.year);
+  if (year < 2000 || year > 2023)
+    return res
+      .status(400)
+      .json({ success: false, errors: ["Year must be between 2000 and 2023"] });
   if (req.query.genres) {
     const validGenres = (
       await Genre.findAll({
@@ -49,8 +58,6 @@ router.get("/:year", async (req, res) => {
         "genres",
       ],
     });
-    const date = new Date();
-    date.getDate;
     res.json({
       success: true,
       events: movies.map((m) => ({
