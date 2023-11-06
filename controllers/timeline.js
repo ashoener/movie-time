@@ -1,5 +1,5 @@
 import { Router } from "express";
-import requireLoggedIn from "../lib/middleware/requireLoggedIn";
+import requireLoggedIn from "../lib/middleware/requireLoggedIn.js";
 
 const router = Router();
 

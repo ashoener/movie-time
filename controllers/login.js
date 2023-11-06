@@ -1,5 +1,5 @@
 import { Router } from "express";
-import requireLoggedOut from "../lib/middleware/requireLoggedOut";
+import requireLoggedOut from "../lib/middleware/requireLoggedOut.js";
 
 const router = Router();
 
