@@ -2,10 +2,11 @@ import { Router } from "express";
 import { User } from "../../../models/index.js";
 
 import { handleError } from "../../../lib/utils.js";
+import requireLoggedOutApi from "../../../lib/middleware/requireLoggedOutApi.js";
 
 const router = Router();
 
-router.post("/", async (req, res) => {
+router.post("/", requireLoggedOutApi, async (req, res) => {
   try {
     const newUser = User.build(req.body);
     await newUser.validate();
