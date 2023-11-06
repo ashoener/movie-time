@@ -7,7 +7,7 @@ if (username && password) {
         await fetch("/api/timeline/2023?genres=Action,Comedy")
         .then((res) => res.json)
         .then((data) => {
-            timeline = new TouchList.Timeline("div-id", data);
+            timeline = new TouchList.Timeline("timeline", data);
         });
 
         if (response.ok) {
