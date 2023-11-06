@@ -1,5 +1,11 @@
 import { Router } from "express";
-import { User, Movie, SavedMovie } from "../../../models/index.js";
+import {
+  User,
+  Movie,
+  Genre,
+  Language,
+  SavedMovie,
+} from "../../../models/index.js";
 
 import { handleError } from "../../../lib/utils.js";
 import requireLoggedInApi from "../../../lib/middleware/requireLoggedInApi.js";
@@ -21,6 +27,22 @@ router.get("/", async (req, res) => {
               attributes: [],
             },
             as: "saved_movies",
+            include: [
+              {
+                model: Genre,
+                attributes: ["id", "name"],
+                through: {
+                  attributes: [],
+                },
+              },
+              {
+                model: Language,
+                attributes: ["id", "name"],
+                through: {
+                  attributes: [],
+                },
+              },
+            ],
           },
         ],
         attributes: {
@@ -30,6 +52,7 @@ router.get("/", async (req, res) => {
     ).get({ plain: true });
     res.json({ success: true, movies: user.saved_movies });
   } catch (err) {
+    console.log(err);
     handleError(err, res);
   }
 });
