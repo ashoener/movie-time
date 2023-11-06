@@ -5,7 +5,9 @@
 }
 
 .bgimg {
+    background-image: url('/images/pexels-tima-miroshnichenko-7991579.jpg');
     height: 100%;
+    width: auto;
     position: relative;
     opacity: 0.50;
     background-position: center;
