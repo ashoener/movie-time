@@ -80,7 +80,9 @@ router.get("/:year", requireLoggedInApi, async (req, res) => {
             `<br><button id="save-movies" data-movie="${m.id}" class="btn btn-primary mt-2">Save to list</button>`,
         },
         media: {
-          url: getTMDBImageUrl(m.backdrop_path),
+          url: m.backdrop_path.length
+            ? getTMDBImageUrl(m.backdrop_path)
+            : getTMDBImageUrl(m.poster_path),
           alt: m.title,
           thumbnail: getTMDBImageUrl(m.poster_path),
         },
