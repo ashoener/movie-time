@@ -10,5 +10,15 @@ const loginForm = async (event) => {
             body: JSON.stringify({username, password}),
             headers: { 'Content-Type' : 'application/json '},
         });
+
+        if (response.ok) {
+            document.location.replace('/');
+        } else {
+            alert('Login failed.');
+        }
     }
-}
+};
+
+document
+    .querySelector('.login-form')
+    .addEventListener('submit', loginForm);
