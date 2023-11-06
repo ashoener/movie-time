@@ -3,7 +3,8 @@ import { Router } from "express";
 import { Op } from "sequelize";
 import { Genre, Movie } from "../../models/index.js";
 
-import { handleError } from "../../lib/utils.js";
+import { getTMDBImageUrl, handleError } from "../../lib/utils.js";
+
 import requireLoggedInApi from "../../lib/middleware/requireLoggedInApi.js";
 
 const router = Router();
@@ -57,6 +58,10 @@ router.get("/:year", requireLoggedInApi, async (req, res) => {
         "popularity",
         "release_date",
         "genres",
+        "overview",
+        "tagline",
+        "poster_path",
+        "backdrop_path",
       ],
       order: [["popularity", "desc"]],
     });
@@ -70,7 +75,12 @@ router.get("/:year", requireLoggedInApi, async (req, res) => {
         },
         text: {
           headline: m.title,
-          text: "This will be the tagline",
+          text: m.overview,
+        },
+        media: {
+          url: getTMDBImageUrl(m.backdrop_path),
+          alt: m.title,
+          thumbnail: getTMDBImageUrl(m.poster_path),
         },
         unique_id: m.id,
       })),
