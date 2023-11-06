@@ -2,6 +2,7 @@ import Movie from "./Movie.js";
 import Genre from "./Genre.js";
 import Language from "./Language.js";
 import User from "./User.js";
+import SavedMovie from "./SavedMovie.js";
 
 import MovieGenre from "./MovieGenre.js";
 import MovieLanguage from "./MovieLanguage.js";
@@ -28,4 +29,27 @@ Language.belongsToMany(Movie, {
   foreignKey: "language_id",
 });
 
-export { Movie, Genre, Language, User };
+Movie.belongsToMany(User, {
+  through: SavedMovie,
+  onDelete: "cascade",
+  foreignKey: "movie_id",
+});
+
+User.belongsToMany(Movie, {
+  through: SavedMovie,
+  onDelete: "cascade",
+  foreignKey: "user_id",
+  as: "saved_movies",
+});
+
+// SavedMovie.belongsTo(User, {
+//   foreignKey: "user_id",
+//   onDelete: "cascade",
+// });
+
+// User.hasMany(SavedMovie, {
+//   foreignKey: "user_id",
+//   onDelete: "cascade",
+// });
+
+export { Movie, Genre, Language, User, SavedMovie };
