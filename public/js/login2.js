@@ -12,7 +12,9 @@ const loginForm = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/timeline");
+      setTimeout(() => {
+        document.location.replace("/timeline");
+      }, 500);
     } else {
       alert("Login failed.");
     }

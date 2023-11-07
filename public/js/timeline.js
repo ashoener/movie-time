@@ -1,21 +1,22 @@
+let timeline;
+const yearElem = document.getElementById("year");
+const genreElem = document.getElementById("genre");
 const newFormHandler = async (event) => {
-    event.preventDefault();
-}
+  event.preventDefault();
+  const response = await fetch(
+    `/api/timeline/${yearElem.value}?genres=${encodeURIComponent(
+      genreElem.value
+    )}`
+  );
 
-if (username && password) {
-    let timeline;
-        await fetch("/api/timeline/2023?genres=Action,Comedy")
-        .then((res) => res.json)
-        .then((data) => {
-            timeline = new TouchList.Timeline("timeline", data);
-        });
-
-        if (response.ok) {
-            document.location.replace('/')
-        } else {
-            alert('Failed to load timeline');
-        }
+  if (response.ok) {
+    const data = await response.json();
+    timeline = new TL.Timeline("timeline", data);
+    // document.location.replace("/");
+  } else {
+    alert("Failed to load timeline");
+  }
 };
 
-document.querySelector('.timeline-form');
-document.addEventListener('submit', newFormHandler);
+document.querySelector(".timeline-form");
+document.addEventListener("submit", newFormHandler);
