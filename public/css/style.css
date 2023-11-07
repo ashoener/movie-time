@@ -1,14 +1,18 @@
 #title {
-    text-align: center;
-    font-family: Diplomata, Bungee Spice, serif;
-    font-size: 64px;
+  text-align: center;
+  font-family: Diplomata, Bungee Spice, serif;
+  font-size: 64px;
 }
 
 .bgimg {
-    background-image: url('/images/pexels-tima-miroshnichenko-7991579.jpg');
-    width: 100%;
-    position: relative;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url("/images/pexels-tima-miroshnichenko-7991579.jpg");
+  width: 100%;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tl-storyslider {
+  height: 500px !important;
 }
