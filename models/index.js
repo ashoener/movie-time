@@ -33,6 +33,7 @@ Movie.belongsToMany(User, {
   through: SavedMovie,
   onDelete: "cascade",
   foreignKey: "movie_id",
+  as: "saved_movies",
 });
 
 User.belongsToMany(Movie, {
