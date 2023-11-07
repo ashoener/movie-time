@@ -16,7 +16,8 @@ const loginForm = async (event) => {
         document.location.replace("/timeline");
       }, 500);
     } else {
-      alert("Login failed.");
+      const data = await response.json();
+      renderErrors(data.errors);
     }
   }
 };

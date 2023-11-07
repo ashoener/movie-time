@@ -16,7 +16,8 @@ const signUp = async (event) => {
         document.location.replace("/timeline");
       }, 500);
     } else {
-      alert("Sign up failed.");
+      const data = await response.json();
+      renderErrors(data.errors);
     }
   }
 };

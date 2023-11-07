@@ -34,9 +34,9 @@ document.addEventListener("click", async (e) => {
     }),
   });
   if (response.ok) {
-    alert("Successfully saved movie to list.");
+    renderSuccess("Successfully saved movie to list.");
   } else {
     const data = await response.json();
-    alert(`Error: ${data.errors[0]}`);
+    renderErrors(data.errors);
   }
 });
