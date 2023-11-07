@@ -77,7 +77,7 @@ router.get("/:year", requireLoggedInApi, async (req, res) => {
           headline: m.title,
           text:
             m.overview +
-            `<br><button id="save-movies" data-movie="${m.id}" class="btn btn-primary mt-2">Save to list</button>`,
+            `<br><button data-movie="${m.id}" class="btn btn-primary save-movies-btn mt-2">Save to list</button>`,
         },
         media: {
           url: m.backdrop_path.length
