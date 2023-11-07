@@ -53,6 +53,7 @@ router.get("/:year", requireLoggedInApi, async (req, res) => {
       limit: 100,
       attributes: [
         "id",
+        "imdb_id",
         "title",
         "runtime",
         "popularity",
@@ -77,7 +78,9 @@ router.get("/:year", requireLoggedInApi, async (req, res) => {
           headline: m.title,
           text:
             m.overview +
-            `<br><button data-movie="${m.id}" class="btn btn-primary save-movies-btn mt-2">Save to list</button>`,
+            `<br><button data-movie="${m.id}" class="btn btn-primary save-movies-btn mt-2">Save to list</button>` +
+            `<a target="_blank" href="https://www.themoviedb.org/movie/${m.id}" class="btn btn-primary ms-2 mt-2">View on TMDB</a>` +
+            `<a target="_blank" href="https://www.imdb.com/title/${m.imdb_id}" class="btn btn-primary ms-2 mt-2">View on IMDB</a>`,
         },
         media: {
           url: m.backdrop_path.length
