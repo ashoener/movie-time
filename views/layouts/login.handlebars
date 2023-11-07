@@ -4,11 +4,23 @@
     <form class="form login-form">
       <div class="login-group">
         <label for="username-login">Username:</label>
-        <input class="form-input" type="text" id="username-login" />
+        <input
+          class="form-input"
+          type="text"
+          id="username-login"
+          minlength="4"
+          required
+        />
       </div>
       <div class="login-group">
         <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login" />
+        <input
+          class="form-input"
+          type="password"
+          id="password-login"
+          minlength="8"
+          required
+        />
       </div>
       <div class="login-group">
         <button class="btn btn-primary" type="submit">Login</button>
