@@ -3,9 +3,10 @@
 <h1 class="display-1 text-center">Favorite Movies</h1>
 {{#each savedMovies}}
 <div  class="card container overflow-hidden col" style="width: 18rem;">
-  <img src="{{}}" class="card-img-top" alt="movie poster">
+  <img src="{{this.backdrop_path}}" class="card-img-top" alt="movie poster">
   <div class="card-body">
-    <p class="card-text">{{this.title}}</p>
+    <p class="card-text">{{this.title}}  {{this.runtime}}min  </p>
+     <p class="card-text">{{this.genres}}</p>
   </div>
 </div>
 {{/each}}
