@@ -47,5 +47,4 @@ router.get("/", requireLoggedIn, async (req, res) => {
   }
 });
 
-
 export default router;
