@@ -27,30 +27,6 @@
   </head>
   <body>
     <div class="flex-column justify-space-around">
-<<<<<<< HEAD
-        <header class="display-flex justify-space-between align-center p-2">
-            <h1>
-                <a href="/">Movie Time</a>
-            </h1>
-            <h2>
-                <a href="/user/savedmovies.js">Watchlist</a>
-            </h2>
-            <nav>
-                {{!-- Render login/sign-up or logout routes --}}
-                {{#if loggedIn}}
-                <a href="/logout">Logout</a>
-                <button class="no-button" id="'logout">Logout</button>
-                {{else}}
-                <a href="/login">Login</a> |
-                <a href="/signUp">Sign up</a>
-                {{/if}}
-            </nav>
-        </header>
-        <main class="container">
-            {{!-- render the sub layout --}}
-            {{{body}}}
-        </main>
-=======
       <header class="display-flex justify-space-between align-center p-2">
         <h1>
           <a href="/">Movie Time</a>
@@ -70,7 +46,6 @@
         {{! render the sub layout }}
         {{{body}}}
       </main>
->>>>>>> origin
     </div>
 
     {{! Render for logged in users only }}
