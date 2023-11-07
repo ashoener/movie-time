@@ -73,7 +73,10 @@ router.post("/", async (req, res) => {
         movie_id: movie.id,
       },
     });
-    if (exists) return res.json({ success: true });
+    if (exists)
+      return res
+        .status(400)
+        .json({ success: false, errors: ["Movie is already added to list"] });
     await SavedMovie.create({
       user_id: req.session.user.id,
       movie_id: movie.id,

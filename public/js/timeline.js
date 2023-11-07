@@ -18,5 +18,25 @@ const newFormHandler = async (event) => {
   }
 };
 
-document.querySelector(".timeline-form");
-document.addEventListener("submit", newFormHandler);
+document
+  .querySelector(".timeline-form")
+  .addEventListener("submit", newFormHandler);
+
+document.addEventListener("click", async (e) => {
+  if (!e.target.matches(".save-movies-btn")) return;
+  const response = await fetch("/api/user/saved-movies", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      movie_id: e.target.dataset.movie,
+    }),
+  });
+  if (response.ok) {
+    alert("Successfully saved movie to list.");
+  } else {
+    const data = await response.json();
+    alert(`Error: ${data.errors[0]}`);
+  }
+});
