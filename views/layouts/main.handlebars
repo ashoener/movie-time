@@ -34,6 +34,10 @@
         <nav>
           {{! Render login/sign-up or logout routes }}
           {{#if loggedIn}}
+            <a href="/saved-movies">Saved Movies</a>
+            |
+            <a href="/timeline">Timeline</a>
+            |
             <a href="/logout">Logout</a>
           {{else}}
             <a href="/login">Login</a>
