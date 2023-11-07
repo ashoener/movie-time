@@ -1,5 +1,11 @@
+const loadingSpinner = `<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>`;
+const signupButton = document.querySelector(".signup-form button");
+
 const signUp = async (event) => {
   event.preventDefault();
+
+  const prevHtml = signupButton.innerHTML;
+  signupButton.innerHTML = loadingSpinner;
 
   const username = document.querySelector("#username-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
@@ -17,6 +23,8 @@ const signUp = async (event) => {
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json " },
     });
+
+    signupButton.innerHTML = prevHtml;
 
     if (response.ok) {
       setTimeout(() => {
