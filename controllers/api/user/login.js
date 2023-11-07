@@ -9,7 +9,7 @@ const router = Router();
 const minimumTime = 300; // Minimum request time in ms
 router.post("/", requireLoggedOutApi, async (req, res) => {
   if (req.session.loggedIn)
-    return res.json({
+    return res.status(400).json({
       success: false,
       errors: ["Already logged in"],
     });
@@ -26,7 +26,7 @@ router.post("/", requireLoggedOutApi, async (req, res) => {
     if (!user) {
       console.timeEnd("login");
       await waitUntil(startTime + minimumTime);
-      return res.json({
+      return res.status(401).json({
         success: false,
         errors: ["Invalid username or password"],
       });
@@ -35,7 +35,7 @@ router.post("/", requireLoggedOutApi, async (req, res) => {
     if (!isCorrect) {
       console.timeEnd("login");
       await waitUntil(startTime + minimumTime);
-      return res.json({
+      return res.status(401).json({
         success: false,
         errors: ["Invalid username or password"],
       });
