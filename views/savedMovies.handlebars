@@ -1,14 +1,19 @@
-<h1 class="display-1 text-center">Favorite Movies</h1>
-{{#each savedMovies}}
-  <div class="card container overflow-hidden col" style="width: 18rem;">
-    <img
-      src="{{getTMDBImageUrl this.backdrop_path}}"
-      class="card-img-top"
-      alt="movie poster"
-    />
-    <div class="card-body">
-      <p class="card-text">{{this.title}} {{this.runtime}}min </p>
-      <p class="card-text">{{this.genres}}</p>
+<h1 class="display-1 text-center">Watchlist</h1>
+<div class="d-flex flex-row">
+  {{#each savedMovies}}
+    <div class="card container d-inline-flex col-sm-4 overflow-hidden">
+      <div class="card-header">
+        {{this.title}}
+      </div>
+      <img
+        src="{{getTMDBImageUrl this.backdrop_path}}"
+        class="card-img-top"
+        alt="movie poster"
+      />
+      <div class="card-body">
+        <p class="card-text">runtime: {{this.runtime}}min </p>
+        <p class="card-text">genres: {{this.genres}}</p>
+      </div>
     </div>
-  </div>
-{{/each}}
+  {{/each}}
+</div>
