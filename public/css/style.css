@@ -12,3 +12,18 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.container{
+    background-color: black;
+    border-color: yellow;
+}
+.card{
+    background-color: black;
+}
+.card-header{
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+.card-body{
+    color: yellow;
+}
