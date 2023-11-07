@@ -19,6 +19,11 @@
       href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Diplomata+SC&display=swap"
       rel="stylesheet"
     />
+    <link
+      title="timeline-styles"
+      rel="stylesheet"
+      href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css"
+    />
   </head>
   <body>
     <div class="flex-column justify-space-around">
@@ -26,9 +31,14 @@
         <h1>
           <a href="/">Movie Time</a>
         </h1>
+        
         <nav>
           {{! Render login/sign-up or logout routes }}
           {{#if loggedIn}}
+            <a href="/saved-movies">Saved Movies</a>
+            |
+            <a href="/timeline">Timeline</a>
+            |
             <a href="/logout">Logout</a>
           {{else}}
             <a href="/login">Login</a>
@@ -39,6 +49,9 @@
       </header>
       <main class="container">
         {{! render the sub layout }}
+        <div class="d-none" id="errors"></div>
+        <div class="d-none" id="success"></div>
+        <script src="/js/messages.js"></script>
         {{{body}}}
       </main>
     </div>

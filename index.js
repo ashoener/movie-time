@@ -6,6 +6,8 @@ import { nanoid } from "nanoid";
 import db from "./config/connection.js";
 import routeLoader from "./lib/routeLoader.js";
 
+import helpers from "./lib/helpers.js";
+
 const SequelizeStore = connectSequelize(Store);
 
 const app = express();
@@ -26,7 +28,7 @@ app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const hbs = exphbs.create({ extname: ".handlebars" });
+const hbs = exphbs.create({ extname: ".handlebars", helpers });
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 

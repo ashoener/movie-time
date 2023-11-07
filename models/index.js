@@ -33,6 +33,7 @@ Movie.belongsToMany(User, {
   through: SavedMovie,
   onDelete: "cascade",
   foreignKey: "movie_id",
+  as: "saved_movies",
 });
 
 User.belongsToMany(Movie, {
@@ -42,14 +43,14 @@ User.belongsToMany(Movie, {
   as: "saved_movies",
 });
 
-// SavedMovie.belongsTo(User, {
-//   foreignKey: "user_id",
-//   onDelete: "cascade",
-// });
+ SavedMovie.belongsTo(User, {
+ foreignKey: "user_id",
+  onDelete: "cascade",
+ });
 
-// User.hasMany(SavedMovie, {
-//   foreignKey: "user_id",
-//   onDelete: "cascade",
-// });
+User.hasMany(SavedMovie, {
+  foreignKey: "user_id",
+  onDelete: "cascade",
+});
 
 export { Movie, Genre, Language, User, SavedMovie };
