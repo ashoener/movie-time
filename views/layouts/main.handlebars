@@ -44,6 +44,9 @@
       </header>
       <main class="container">
         {{! render the sub layout }}
+        <div class="d-none" id="errors"></div>
+        <div class="d-none" id="success"></div>
+        <script src="/js/messages.js"></script>
         {{{body}}}
       </main>
     </div>
