@@ -1,6 +1,14 @@
 const loadingSpinner = `<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>`;
 const signupButton = document.querySelector(".signup-form button");
 
+function addButtonBurstAnimation(button) {
+  button.classList.add("button-burst");
+
+  setTimeout(() => {
+    button.classList.remove("button-burst")
+  }, 200);
+}
+
 const signUp = async (event) => {
   event.preventDefault();
 
@@ -27,6 +35,9 @@ const signUp = async (event) => {
     signupButton.innerHTML = prevHtml;
 
     if (response.ok) {
+
+      addButtonBurstAnimation(signupButton);
+
       setTimeout(() => {
         document.location.replace("/timeline");
       }, 500);
