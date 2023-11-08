@@ -1,8 +1,9 @@
-<h1 class="display-1 text-center">Watchlist</h1>
+<h1 class=" display-1 text-center text-black">Watchlist</h1>
 <div class="d-flex flex-row">
   {{#each savedMovies}}
+  
     <div class="card container d-inline-flex col-sm-4 overflow-hidden">
-      <div class="card-header">
+      <div class="cardheader">
         {{this.title}}
       </div>
       <img
@@ -10,10 +11,16 @@
         class="card-img-top"
         alt="movie poster"
       />
-      <div class="card-body">
-        <p class="card-text">runtime: {{this.runtime}}min </p>
-        <p class="card-text">genres: {{this.genres}}</p>
+      <div class="card-body text-center">
+         <p class="card-text">{{this.tagline}}</p>
+        <p class="card-text">{{this.runtime}}min</p>
+        <p class="card-text">{{this.genres}}</p>
       </div>
+      <div class="footer">
+         <button class="btn btn-primary">Remove</button>
+        </div>
+
     </div>
+    
   {{/each}}
 </div>

@@ -45,11 +45,13 @@
 
 .card{
     background-color: black;
+    border-color: white;
 }
-.card-header{
+.cardheader{
     background-color: black;
     text-align: center;
     color: white;
+    font-weight: bolder;
 }
 .card-body{
     color: yellow;
