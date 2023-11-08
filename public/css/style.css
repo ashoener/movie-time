@@ -13,8 +13,6 @@
   background-size: cover;
 }
 
-<<<<<<< HEAD
-=======
 .message-card {
     text-align: center;
 
@@ -33,7 +31,6 @@
     border-color: black;
 }
 
->>>>>>> 8a8e3bc (styling for homepage)
 .tl-storyslider {
   height: 500px !important;
 }
@@ -51,11 +48,9 @@
 .card-body{
     color: yellow;
 }
-<<<<<<< HEAD
 .footer{
   background-color: blackt;
 }
-=======
 
 .curtain {
     position: fixed;
@@ -86,4 +81,3 @@
         transform: translateX(100%);
     }
 }
->>>>>>> 8a8e3bc (styling for homepage)
