@@ -1,28 +1,32 @@
 <div class="saved-container">
-<h1 class=" display-1 text-center text-white">Watchlist</h1>
-<div class="d-flex flex-row">
-  {{#each savedMovies}}
-  
-    <div class="card container d-inline-flex col-sm-4 overflow-hidden">
-      <div class="cardheader">
-        {{this.title}}
-      </div>
-      <img
-        src="{{getTMDBImageUrl this.backdrop_path}}"
-        class="card-img-top"
-        alt="movie poster"
-      />
-      <div class="card-body text-center">
-         <p class="card-text">{{this.tagline}}</p>
-        <p class="card-text">{{this.runtime}}min</p>
-        <p class="card-text">{{this.genres}}</p>
-      </div>
-      <div class="footer text-center">
-         <button class="btn btn-primary">Remove</button>
+  <h1 class="display-1 text-center text-white">Watchlist</h1>
+  <div class="d-flex flex-row">
+    {{#each savedMovies}}
+
+      <div class="card container d-inline-flex col-sm-4 overflow-hidden">
+        <div class="cardheader">
+          {{this.title}}
+        </div>
+        <img
+          src="{{getTMDBImageUrl this.backdrop_path}}"
+          class="card-img-top"
+          alt="movie poster"
+        />
+        <div class="card-body text-center">
+          <p class="card-text">{{this.tagline}}</p>
+          <p class="card-text">{{this.runtime}}min</p>
+          <p class="card-text">{{this.genres}}</p>
+        </div>
+        <div class="footer text-center">
+          <button
+            class="btn btn-primary"
+            data-movie="{{this.id}}"
+          >Remove</button>
         </div>
 
-    </div>
-    
-  {{/each}}
+      </div>
+
+    {{/each}}
+  </div>
 </div>
-</div>
+<script src="/js/saved.js"></script>
