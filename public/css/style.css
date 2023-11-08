@@ -90,3 +90,6 @@
         transform: translateX(100%);
     }
 }
+.saved{
+    background-color: black;
+}
