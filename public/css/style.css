@@ -47,7 +47,7 @@
     background-color: black;
     border-color: white;
 }
-.card-header{
+.cardheader{
     background-color: black;
     text-align: center;
     color: white;
@@ -59,6 +59,7 @@
 
 .footer{
   background-color: black;
+  
 }
 
 .curtain {
@@ -97,4 +98,7 @@
     100% {
         transform: translateX(100%);
     }
+}
+.saved-container{
+    background-color: black;
 }
