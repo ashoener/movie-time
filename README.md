@@ -6,6 +6,8 @@
 
 Movie Time is an application designed for movie lovers. Users will be able to enter the site and log in. They will be able to see timelines of movies, based on the release date, and they can filter it by year and genre in order to see the timelines. Users will also be able to save the movies they want to their "watchlist" if interested.
 
+![Website Screenshot](/assets//images//screenshot.png)
+
 ## Table of Contents
 
 - [Description](#description)
