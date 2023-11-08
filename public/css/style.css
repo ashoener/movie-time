@@ -82,6 +82,14 @@
     color: #fff;
 }
 
+.timeline {
+    text-align: center;
+    margin-top: 50px;
+    background-image: radial-gradient(closest-side at 60% 55%, rgb(255, 166, 0), rgb(248, 177, 100), rgb(247, 143, 95));
+    border-style: solid;
+    border-color: black;
+}
+
 @keyframes curtainAnimation {
     0% {
         transform: translateX(0);
