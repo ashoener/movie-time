@@ -13,6 +13,32 @@
   background-size: cover;
 }
 
+.message-card {
+    text-align: center;
+    border-radius: 25px;
+    border: 5px solid rgb(247, 143, 95);
+    background-color: bisque;
+    color: rgb(255, 119, 0);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    box-shadow: 5px 5px 2px lightblue;
+}
+
+.login-card {
+    text-align: center;
+    margin-top: 50px;
+    background-image: radial-gradient(closest-side at 60% 55%, rgb(255, 166, 0), rgb(248, 177, 100), rgb(247, 143, 95));
+    border-style: solid;
+    border-color: black;
+}
+
+.signup-card {
+    text-align: center;
+    margin-top: 50px;
+    background-image: radial-gradient(closest-side at 60% 55%, rgb(255, 166, 0), rgb(248, 177, 100), rgb(247, 143, 95));
+    border-style: solid;
+    border-color: black;
+}
+
 .tl-storyslider {
   height: 500px !important;
 }
