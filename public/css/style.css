@@ -32,6 +32,11 @@
     color: black;
 }
 
+.button-burst {
+    animation: buttonBurst 0.3s;
+}
+
+
 .signup-card {
     text-align: center;
     margin-top: 50px;
@@ -92,6 +97,17 @@
         transform: translateX(100%);
     }
 }
-.saved-container{
-    background-color: black;
+
+@keyframes buttonBurst {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
