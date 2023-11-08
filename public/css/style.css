@@ -13,6 +13,27 @@
   background-size: cover;
 }
 
+<<<<<<< HEAD
+=======
+.message-card {
+    text-align: center;
+
+}
+
+.nav-bar a{
+    border-radius: 25px;
+    border-color: rgb(247, 143, 95);
+}
+
+.login-card {
+    text-align: center;
+    margin-top: 50px;
+    background-image: radial-gradient(closest-side at 60% 55%, rgb(255, 166, 0), rgb(248, 177, 100), rgb(247, 143, 95));
+    border-style: solid;
+    border-color: black;
+}
+
+>>>>>>> 8a8e3bc (styling for homepage)
 .tl-storyslider {
   height: 500px !important;
 }
@@ -30,6 +51,39 @@
 .card-body{
     color: yellow;
 }
+<<<<<<< HEAD
 .footer{
   background-color: blackt;
 }
+=======
+
+.curtain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: linear-gradient(to bottom, rgb(255, 166, 0), rgb(248, 177, 100), rgb(247, 143, 95));
+    animation: curtainAnimation 3s linear forwards;
+    animation-delay: 1s;
+}
+
+.title-container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 50px;
+    font-size: 24px;
+    color: #fff;
+}
+
+@keyframes curtainAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+>>>>>>> 8a8e3bc (styling for homepage)
