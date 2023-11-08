@@ -42,7 +42,7 @@ document.addEventListener("click", async (e) => {
     }),
   });
   if (response.ok) {
-    e.target.innerText = "Successfully saved movie to list.";
+    e.target.innerText = "Saved to list";
     renderSuccess();
   } else {
     e.target.innerHTML = prevHtml;
