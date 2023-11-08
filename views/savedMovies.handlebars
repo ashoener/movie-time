@@ -1,4 +1,4 @@
-<div class="saved container">
+<div class="saved-container">
   <h1 class="display-1 text-center text-white">Watchlist</h1>
   <div class="d-flex flex-row">
     {{#each savedMovies}}
@@ -17,9 +17,9 @@
           <p class="card-text">{{this.runtime}}min</p>
           <p class="card-text">{{this.genres}}</p>
         </div>
-        <div class="footer text-center">
+        <div class="footer text-center d-grid">
           <button
-            class="btn btn-primary"
+            class="btn btn-danger btn-outline-danger"
             data-movie="{{this.id}}"
           >Remove</button>
         </div>

@@ -59,6 +59,7 @@
 
 .footer{
   background-color: black;
+  
 }
 
 .curtain {
@@ -90,6 +91,6 @@
         transform: translateX(100%);
     }
 }
-.saved{
+.saved-container{
     background-color: black;
 }
