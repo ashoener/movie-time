@@ -51,7 +51,7 @@
 
 .card{
     background-color: black;
-    border-color: white;
+    border-color: yellow;
 }
 .cardheader{
     background-color: black;
@@ -122,6 +122,11 @@
 
 .saved-container{
     background-color: black;
+    padding-left: 1200px;
+    padding-right: 1200px;
+    margin-left: -1200px;
+    margin-right: -1200px;
+    width:auto;
 }
 
 @keyframes buttonBurst {
